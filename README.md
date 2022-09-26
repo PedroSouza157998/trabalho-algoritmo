@@ -1,4 +1,4 @@
-# Projeto de Algortimos e Estruturas de Dados
+# Projeto de Algoritmos e Estruturas de Dados
 ## Algoritmo de Prim
 
 ```
