@@ -209,33 +209,41 @@ def print_graph():
 vertices = []
 vertices_no = 0
 graph = []
-add_vertex("A")
-add_vertex("B")
-add_vertex("C")
-add_vertex("D")
-add_vertex("E")
+# add_vertex("A")
+# add_vertex("B")
+# add_vertex("C")
+# add_vertex("D")
+# add_vertex("E")
+# 
+# add_edge('A', 'B', 2)
+# add_edge('E', 'A', 4)
+# add_edge('D', 'C', 6)
+# add_edge('A', 'D', 1)
+# add_edge('B', 'C', 8)
+# add_edge('E', 'C', 7)
 
-add_edge('A', 'B', 2)
-add_edge('E', 'A', 4)
-add_edge('D', 'C', 6)
-add_edge('A', 'D', 1)
-add_edge('B', 'C', 8)
-add_edge('E', 'C', 7)
+for i in open("vertices.txt", "r").readlines():
+    add_vertex(i.split()[0])
+
+for i in open("arestas.txt", "r").readlines():
+    add_edge(i.split()[0], i.split()[1], float(i.split()[2].replace('\n', '')))
+
 
 print_graph()
-print("Internal representation: ", graph)
+# print("Internal representation: ", graph)
 
+g = Graph(len(graph))
+g.graph = graph
+print(open("arestas.txt", "r").readlines())
+#myHeap.Print()
+g.primMST()
 
 # Driver's codef
-if __name__ == '__main__':
-    g = Graph(5)
-    g.graph = [[0, 2, 0, 6, 0],
-               [2, 0, 3, 8, 5],
-               [0, 3, 0, 0, 7],
-               [6, 8, 0, 0, 9],
-               [0, 5, 7, 9, 0]]
+#if __name__ == '__main__':
+    #g = Graph(len(graph))
+    #g.graph = graph
     #print(open("arestas.txt", "r").readlines())
-    g.primMST()
-    myHeap.Print()
+    #g.primMST()
+    #myHeap.Print()
 
  
